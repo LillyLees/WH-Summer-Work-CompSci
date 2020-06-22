@@ -1,0 +1,66 @@
+import random
+
+WordList = ["hot", "summer", "hard", "dry", "simple",
+"light", "weak", "male", "sad", "win", "small",
+"ignore", "buy", "succeed", "reject",
+"prevent", "exclude",
+"cold", "winter", "soft", "wet", "complex",
+"darkness", "strong", "female", "happy",
+"lose", "big", "pay attention", "sell", "fail",
+"accept", "allow", "include"]
+
+Part2 = [["yellow", "blue"],["dark","light"],["smile", "frown"],["girl","boy"],["angel","devil"],["black", "white"],["cat","dog"],["spring","autumn"],["fluffy", "smooth"],["calm","angry"],["empty","full"],["wounded", "healed"],["watch","ignore"],["under","on-top"],["child", "adult"],["silent","noisy"],["dark","light"],["heaven", "hell"],["up","down"],["left","right"],["top", "bottom"]]
+
+
+print("~~~~~~~~~~~~~~~~(✿ ◠ ‿ ◠ ) Word Quiz ( ◡ ‿ ◡ ✿)~~~~~~~~~~~~~~~~ ")
+
+m = Part2[1]
+n = m[0]
+
+score = 0
+wrong = []
+right = []
+
+for i in range (0, 10):
+  k = 20
+  m = random.randint(0, 33)
+  n = random.randint(0,33)
+  x = random.randint(0, k)
+  y = Part2[x]
+  
+  print(WordList[m], "is to", WordList[n],", as", y[0],"is to... ? ")
+  question = input()
+  Part2.remove(y)
+ 
+  k -= 1
+  if question == y[1]:
+    score += 1
+  else:
+    wrong.append(question)
+    right.append(y[1])
+
+print("===============================")
+
+if score > 0:
+  print("well-done! you got ",score,"/10!")
+  z = -1
+  if score < 10:
+    print("Here are the answers you got wrong, and the correct answers: ")
+    for i in range (0, len(wrong)):
+       z +=1 
+       print("Correct Answer: ",right[z])
+       print("Your Answer: ",wrong[z])
+       print("====================================")
+  elif score == 10:
+    print("Awesome, you got no wrong answers !! ^_^")
+else:
+  print("Sorry, you got 0/10 correct :( better luck next time! ")
+  print("Here are the answers you got wrong, and the correct answers: ")
+  for i in range (0, len(wrong)):
+       z +=1 
+       print("Correct Answer: ",right)
+       print("Your Answer: ",wrong)
+       print("====================================")
+       
+       
+  https://repl.it/@forestlees/QuestionableIntelligentKeyboardmapping#main.py
