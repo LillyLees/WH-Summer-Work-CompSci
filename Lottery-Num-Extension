@@ -1,0 +1,52 @@
+import random
+
+print("==========(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧  Lottery Numbers  !!==========")
+numbers = []
+num2 = []
+print ("Please enter your seven lottery numbers: ")
+
+Boo = False
+while Boo == False: 
+  for i in range (0, 7):
+    IP = int(input("Lottery number: "))
+    if IP > 0 and IP < 50 and IP not in num2 :
+      num2.append(IP)
+      Boo = True
+    else:
+      print("Sorry! that wasnt a valid number, remember lottery numbers are between 1-49. Please start from the begining!")
+      Boo = False
+
+
+
+for i in range (1, 100):
+  x = random.randint(1, 50)
+  L = len(numbers)
+  if x not in numbers:
+      numbers.append(x)
+      if L == 6:
+        break
+m = -1
+
+CorrectNum = []
+
+for i in range (0, 7):
+  m += 1
+  if num2[m] in numbers: 
+    CorrectNum.append(num2[m])
+
+if len(CorrectNum) > 0:
+  print("Well done! you got", len(CorrectNum), "out of 7 correct!")
+  print("These are the numbers you got right :")
+  print(CorrectNum)
+  length = float(len(CorrectNum))
+  prob = 1/49 ** length
+  print("The probiblity of you choosing these numbers was: ",prob)
+  print("===========(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧  Lottery End  !!===========")
+
+else:
+  print("Sorry! none of your numbers were correct :(")
+  print("===========(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧  Lottery End  !!===========")
+  
+  
+  
+  https://repl.it/@forestlees/WingedGreenChief#main.py
