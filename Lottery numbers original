@@ -8,7 +8,7 @@ for i in range (1, 100):
   L = len(numbers)
   if x not in numbers:
       numbers.append(x)
-      #print(numbers)
+      
       if L == 6:
         print("*drum role*")
         print ("The lottery numbers are: ", numbers[0:6] )
